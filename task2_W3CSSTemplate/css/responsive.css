@@ -1,0 +1,62 @@
+/* PC */
+@media (min-width: 64em) {
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+}
+
+/* Moblie */
+@media (max-width: 46.1875em) {
+  .c-full-width {
+    width: 100% !important;
+  }
+  #header {
+    overflow: hidden;
+  }
+
+  #nav,
+  #nav li a,
+  #nav > li {
+    display: block;
+  }
+
+  #nav > li:first-child {
+    display: inline-block;
+  }
+
+  #header .moblie_menu-btn {
+    display: block;
+  }
+
+  #header .header__search-btn {
+    display: none;
+  }
+  .text-content {
+    display: none;
+  }
+
+  #content .member-img {
+    width: 250px;
+  }
+
+  .place-item {
+    margin-bottom: 16px;
+  }
+
+  #content .member_infos {
+    padding-top: 48px;
+  }
+
+  #content .members-list {
+    margin: 16px auto;
+  }
+
+  .place-buy-ticket {
+    text-align: center;
+  }
+
+  .contact-form .form-control {
+    padding: 15px;
+  }
+}
