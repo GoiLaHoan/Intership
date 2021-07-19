@@ -1,0 +1,24 @@
+{
+    "data": [{
+            "id": 1,
+            "email": "hoannv@jvb.com",
+            "password": "123456",
+            "gender": 1,
+            "name": "hoan"
+        },
+        {
+            "id": 2,
+            "email": "hoannv2@jvb.com",
+            "password": "012345",
+            "gender": 0,
+            "name": "hoan2"
+        },
+        {
+            "name": "abc123",
+            "gender": 0,
+            "email": "1234@gmail.com",
+            "password": "123456",
+            "id": 3
+        }
+    ]
+}
