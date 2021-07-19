@@ -1,0 +1,41 @@
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+.heading {
+    margin-bottom: 5rem;
+}
+
+.heading__img {
+    width: 50%;
+}
+
+.content {}
+
+.content__img {
+    width: 100%;
+}
+
+.slider__content {
+    padding-right: 26rem;
+}
+
+.content__live .live_img,
+.content__design .design_img,
+.content__World .World_img {
+    width: 100%;
+    height: 100%;
+}
+
+.form-control:hover {
+    border-color: #1dbfaf;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}

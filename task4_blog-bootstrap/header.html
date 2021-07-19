@@ -1,0 +1,57 @@
+<header>
+    <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" id='navList'>
+                <li class=" nav-item active">
+                    <a class=" nav-link " href=" ./index.html ">Home <span class=" sr-only ">(current)</span></a>
+                </li>
+                <li class=" nav-item ">
+                    <a class=" nav-link " href=" ./all-blog.html ">All Blog</a>
+                </li>
+                <li class=" nav-item ">
+                    <a class=" nav-link" href=" ./add-blog.html ">Add Blog</a>
+                </li>
+                <li class=" nav-item ">
+                    <a class=" nav-link " href=" ./add_category.html ">Add Category</a>
+                </li>
+                <li class=" nav-item ">
+                    <a class=" nav-link " href=" ./contact.html ">Contact</a>
+                </li>
+            </ul>
+            <form class=" form-inline my-2 my-lg-0 ">
+                <a class="btn-item btn btn-primary mr-sm-2" href="./login.html " role=" button ">Login</a>
+                <a class="btn-item btn btn-primary mr-sm-2 " href="./register.html " role=" button ">Register</a>
+                <input class=" form-control mr-sm-2 " type=" search " placeholder=" Search " aria-label=" Search ">
+                <button class=" btn btn-outline-success my-2 my-sm-0 " type=" submit ">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+
+    const navs = $$(".nav-item");
+    const btns = $$(".btn-item");
+
+    navs.forEach((nav, index) => {
+        nav.onclick = function() {
+            $(".nav-item.active").classList.remove("active");
+            $(".btn-item").classList.remove("active");
+            this.classList.add("active");
+        }
+    });
+    btns.forEach((btn, index) => {
+        btn.onclick = function() {
+            $(".nav-item.active").classList.remove("active");
+            $(".btn-item").classList.remove("active");
+            this.classList.add("active");
+        }
+    })
+</script>
