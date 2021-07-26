@@ -18,11 +18,13 @@ const ButtonStyled = styled(Button)`
   }
   &:hover {
     .check-icon,
-    .delete-icon {
+    .delete-icon,
+    .edit-icon {
       display: inline-block;
     }
   }
   .check-icon {
+    float: right;
     display: none;
     &:hover {
       background-color: #e2e2e2;
@@ -42,6 +44,7 @@ const ButtonStyled = styled(Button)`
 
   .edit-icon {
     float: right;
+    display: none;
     &:hover {
       background-color: #e2e2e2;
       border-radius: 3px;
@@ -56,24 +59,32 @@ export default function Todo({
   onEditBtnClick,
 }) {
   return (
-    <ButtonStyled
-      isCompleted={todo.isCompleted}
-      shouldFitContainer
-      iconAfter={
-        !todo.isCompleted && (
-          <span className="check-icon" onClick={() => onCheckBtnClick(todo.id)}>
-            <CheckIcon primaryColor="#4fff4f" />
-          </span>
-        )
-      }
-    >
+    <ButtonStyled id="abc2" isCompleted={todo.isCompleted} shouldFitContainer>
       {todo.name}
+
+      {!todo.isCompleted ? (
+        <span
+          className="check-icon"
+          onClick={() => {
+            onCheckBtnClick(todo.id);
+          }}
+        >
+          <CheckIcon primaryColor="#4fff4f" />
+        </span>
+      ) : (
+        ""
+      )}
       <span className="delete-icon" onClick={() => onDeleteBtnClick(todo.id)}>
         <EditorRemoveIcon />
       </span>
-      <span className="edit-icon" onClick={() => onEditBtnClick(todo.id)}>
-        <EditIcon />
-      </span>
+
+      {!todo.isCompleted ? (
+        <span className="edit-icon" onClick={() => onEditBtnClick(todo.id)}>
+          <EditIcon />
+        </span>
+      ) : (
+        ""
+      )}
     </ButtonStyled>
   );
 }

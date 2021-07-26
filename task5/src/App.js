@@ -23,9 +23,9 @@ function App() {
     localStorage.setItem(TODO_APP_STORAGE_KEY, JSON.stringify(todoList));
   }, [todoList]);
 
-  const onTextInputChange = useCallback((e) => {
+  const onTextInputChange = (e) => {
     setTextInput(e.target.value);
-  }, []);
+  };
 
   const onAddBtnClick = useCallback(
     (e) => {
@@ -39,13 +39,13 @@ function App() {
     [textInput, todoList]
   );
 
-  const onCheckBtnClick = useCallback((id) => {
+  const onCheckBtnClick = (id => {
     setTodoList((prevState) =>
       prevState.map((todo) =>
         todo.id === id ? { ...todo, isCompleted: true } : todo
       )
     );
-  }, []);
+  });
 
   const onDeleteBtnClick = (id) => {
     const filteredItemsDelete = todoList.filter((item) => item.id !== id);
@@ -61,14 +61,17 @@ function App() {
   
   const onEditBtn = () => {
     const filteredItemsEdit = [...todoList];
-
+    if(setEditText) {
     for (let i = 0; i < filteredItemsEdit.length; i++) {
       if(filteredItemsEdit[i].id === editItemID) {
         filteredItemsEdit[i].name = textInput;
       }
     }
-    setTodoList(filteredItemsEdit);
-
+    setTodoList(filteredItemsEdit); 
+    setEditText(false)
+    setTextInput("")
+  }
+    
   };
 
   return (
@@ -95,6 +98,7 @@ function App() {
       >
         Sửa
       </Button> }
+
       <TodoList
         todoList={todoList}
         onCheckBtnClick={onCheckBtnClick}
